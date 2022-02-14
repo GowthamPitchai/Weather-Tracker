@@ -1,14 +1,14 @@
 import html
 from twilio.rest import Client
 import requests
-API_KEY = "d02282b70d628339e28edc9882c191df"
+API_KEY = "your's API-key"
 API = "https://api.openweathermap.org/data/2.5/onecall"
-ACCOUNT_SID = "ACbc668805ee5e5590dfec3591177be358"
-AUTH_TOKEN = "2dd0aa4d23647d22987e9b662fb694c4"
+ACCOUNT_SID = "your's account-id"
+AUTH_TOKEN = "your's authentication-token"
 
 parameters = {
-    "lat": 10.95,
-    "lon": 78.0833,
+    "lat": your's lat,
+    "lon": your's long,
     "appid": API_KEY,
     "exclude": "current,minutely,daily"
 }
@@ -29,17 +29,14 @@ if will_rain:
     message = client.messages \
         .create(
         body="Rain Rain On The Way.. Stay Safe..!!",
-        from_='+18126134243',
-        to='+918870264633'
+        from_='from phone no.',
+        to='to phone no'
     )
 else:
     client = Client(ACCOUNT_SID, AUTH_TOKEN)
     message = client.messages \
         .create(
         body="No Rain Enjoy Your Day..!!",
-        from_='+18126134243',
-        to='+918870264633'
+        from_='from phone no.',
+        to='to phone no'
     )
-
-# print(data["hourly"][0]["weather"])
-
